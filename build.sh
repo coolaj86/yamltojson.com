@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p public/
+mkdir -p public/{js,css}
 
 # jadetohtml
 jade index.jade
