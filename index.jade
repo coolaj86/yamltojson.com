@@ -1,0 +1,143 @@
+!!!5
+html(lang="en")
+  head
+    title JSON to YAML
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    link(rel="stylesheet", type="text/css", href="./css/bootstrap.min.css")
+    link(rel="stylesheet", type="text/css", href="./css/bootstrap-responsive.min.css")
+    link(rel="stylesheet", type="text/css", href="./css/style.min.css")
+    link(rel="stylesheet", type="text/css", href="./css/google_prettify/sons-of-obsidian.css")
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-42802552-1', 'jsontoyaml.com');
+      ga('send', 'pageview');
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+    script(src="./js/bootstrap.min.js")
+    script(src="./js/pakmanaged.min.js")
+  body
+    .container
+      section.row
+        .offset1.span5
+          h2 JSON
+          //- TODO will need JSONLint
+          p Paste your JSON here
+          textarea.span5.js-json(rows="20").
+            {
+              "foo": "bar",
+              "baz": [
+                "qux",
+                "quxx"
+              ],
+              "corge": null,
+              "grault": 1,
+              "garply": true,
+              "waldo": "false",
+              "fred": "undefined",
+              "emptyArray": [],
+              "emptyObject": {},
+              "emptyString": ""
+            }
+        .span5
+          h2 YML
+          p See the YML output here
+          textarea.span5.js-yml(rows="20").
+            ---
+
+      .row
+        .offset2.span4
+          button.center.btn.btn-primary.btn-large.js-convert(type="button") Convert JSON to YAML
+
+      section
+        .row
+          br
+          .page-header
+            h1 Converting from JSON to YAML
+        .row
+          .span12
+            p Converting JSON to YAML is a two part process.
+            p.
+              First you have to convert a string of JSON into an object in whichever language you're using.
+              This process is referred to as to <strong>parse</strong> or to <strong>deserialize</strong>.
+            p.
+              Next you'll need to convert that object into a YAML string.
+              This process is referred to as to to <strong>emit</strong>,
+              to <strong>serialize</strong>, or to <strong>stringify</strong>.
+            p.
+              Technically speaking, JSON already is YAML since YAML allows for the use
+              of brackets and commas in the exact same way that JSON does.
+              However, for the sake of human-readability, it's very convenient to use
+              the whitespace syntax of YAML without any brackets.
+      section
+        .row
+          .page-header
+            h1 How do I convert from JSON to YAML in...
+            ul
+              li
+                a(href="#javascript") JavaScript
+              li
+                a(href="#browser-javascript") JavaScript (browser only)
+              li
+                a(href="#ruby") Ruby
+              li
+                a(href="#python") Python
+              li
+                a(href="#other") Other languanges...
+
+      article
+        a(name="javascript")
+        include examples/javascript-node
+      article
+        a(name="browser-javascript")
+        include examples/javascript-browser
+      article
+        a(name="ruby")
+        include examples/ruby
+      article
+        a(name="python")
+        include examples/python
+
+      section.row
+        a(name="other")
+        .span12
+          h3 Other languages...
+          p Want to see to to convert JSON to YAML in your favorite language?
+          p 
+            span Please 
+            a(href="https://github.com/coolaj86/json2yaml/issues/new?title=Add%20example%20for%20LANG_X%20to%20jsontoyaml.com&body=Can%20you%20please%20post%20an%20example%20of%20how%20to%20do%20this%20in%20LANG_X?") request an example
+            span  or  
+            a(href="https://github.com/coolaj86/json2yaml/new/gh-pages/examples?filename=LANG_X.jade") add it yourself
+            span  (you can use 
+            a(href="https://github.com/coolaj86/json2yaml/blob/master/examples/ruby.jade") examples/ruby.jade
+            span  as a template).
+
+    footer.footer
+      .container
+        p
+          span Built by 
+          a(href="http://coolaj86.com") AJ ONeal
+          span .
+        p
+          span Code licensed under 
+          a(href="http://www.apache.org/licenses/LICENSE-2.0") Apache License v2.0
+          span , documentation under 
+          a(href="http://creativecommons.org/licenses/by/3.0/") CC BY 3.0
+          span .
+        ul.footer-links
+          li
+            a(href="https://github.com/coolaj86/json2yaml/tree/gh-pages") Source
+          li.muted •
+          li
+            a(href="https://github.com/coolaj86/json2yaml/issues") Issues
+
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js")
+    script.
+      var pres = document.getElementsByTagName("pre");
+      for (var i=0; i < pres.length; ++i) {
+        pres[i].className = "prettyprint linenums";
+      }
+      prettyPrint();
+

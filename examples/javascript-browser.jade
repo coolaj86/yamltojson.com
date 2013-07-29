@@ -1,0 +1,31 @@
+.row
+  .span12
+    h3 JavaScript (browser only)
+    pre.
+      &lt;script src="http://jsontoyaml.com/js/json2yaml.js"&gt;&lt;/script&gt;
+    pre.
+      (function () {
+        "use strict";
+
+        var YAML = window.YAML
+          , json
+          , data
+          , yml
+          ;
+
+        json = '{ "foo": "bar" }';
+        data = JSON.parse(json);
+        yml = YAML.stringify(data);
+
+        console.log(yml);
+      }());
+
+    ul
+      li
+        span Download 
+        code
+          a(href="http://jsontoyaml.com/js/json2yaml.js") json2yaml.js
+      li
+        a(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse") JSON.parse
+      li
+        a(href="https://github.com/coolaj86/json2yaml") YAML::dump

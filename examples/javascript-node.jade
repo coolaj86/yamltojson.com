@@ -1,0 +1,27 @@
+.row
+  .span12
+    h3 JavaScript
+    pre.
+      (function () {
+        "use strict";
+
+        var YAML = require('json2yaml')
+          , json
+          , data
+          , yml
+          ;
+
+        json = '{ "foo": "bar" }';
+        data = JSON.parse(json);
+        yml = YAML.stringify(data);
+
+        console.log(yml);
+      }());
+
+    ul
+      li
+        code npm install json2yaml
+      li
+        a(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse") JSON.parse
+      li
+        a(href="https://github.com/coolaj86/json2yaml") YAML::dump
