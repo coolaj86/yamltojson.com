@@ -25,10 +25,10 @@ This process is referred to as to to <strong>emit</strong>,
 to <strong>serialize</strong>, or to <strong>stringify</strong>.</p><p>Technically speaking, JSON already is YAML since YAML allows for the use
 of brackets and commas in the exact same way that JSON does.
 However, for the sake of human-readability, it's very convenient to use
-the whitespace syntax of YAML without any brackets.</p></div></div></section><section><div class="row"><div class="page-header"><h1>How do I convert from JSON to YAML in...</h1><ul><li><a href="#javascript">JavaScript</a></li><li><a href="#ruby">Ruby</a></li><li><a href="#python">Python</a></li><li><a href="#other">Other languanges...</a></li></ul></div></div></section><article><a name="javascript"></a><div class="row"><div class="span12"><h3>JavaScript</h3><pre>(function () {
+the whitespace syntax of YAML without any brackets.</p></div></div></section><section><div class="row"><div class="page-header"><h1>How do I convert from JSON to YAML in...</h1><ul><li><a href="#javascript">JavaScript</a></li><li><a href="#browser-javascript">JavaScript (browser only)</a></li><li><a href="#ruby">Ruby</a></li><li><a href="#python">Python</a></li><li><a href="#other">Other languanges...</a></li></ul></div></div></section><article><a name="javascript"></a><div class="row"><div class="span12"><h3>JavaScript</h3><pre>(function () {
   &quot;use strict&quot;;
   
-  var json2yaml = require('json2yaml')
+  var YAML = require('json2yaml')
     , json
     , data
     , yml
@@ -40,7 +40,22 @@ the whitespace syntax of YAML without any brackets.</p></div></div></section><se
   
   console.log(yml);
 }());
-</pre><ul><li><code>npm install json2yaml</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse</a></li><li><a href="https://github.com/coolaj86/json2yaml">YAML::dump</a></li></ul></div></div></article><article><a name="ruby"></a><div class="row"><div class="span12"><h3>Ruby</h3><pre>require 'json'
+</pre><ul><li><code>npm install json2yaml</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse</a></li><li><a href="https://github.com/coolaj86/json2yaml">YAML::dump</a></li></ul></div></div></article><article><a name="browser-javascript"></a><div class="row"><div class="span12"><h3>JavaScript (browser only)</h3><pre>&lt;script src=&quot;http://jsontoyaml.com/js/json2yaml.js&quot;&gt;&lt;/script&gt;</pre><pre>(function () {
+  &quot;use strict&quot;;
+  
+  var YAML = window.YAML
+    , json
+    , data
+    , yml
+    ;
+    
+  json = '{ &quot;foo&quot;: &quot;bar&quot; }';
+  data = JSON.parse(json);
+  yml = YAML.stringify(data);
+  
+  console.log(yml);
+}());
+</pre><ul><li><span>Download </span><code><a href="http://jsontoyaml.com/js/json2yaml.js">json2yaml.js</a></code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse</a></li><li><a href="https://github.com/coolaj86/json2yaml">YAML::dump</a></li></ul></div></div></article><article><a name="ruby"></a><div class="row"><div class="span12"><h3>Ruby</h3><pre>require 'json'
 require 'yaml'
 
 json = '{ &quot;foo&quot;: &quot;bar&quot; }'

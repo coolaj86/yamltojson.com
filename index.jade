@@ -79,6 +79,8 @@ html(lang="en")
               li
                 a(href="#javascript") JavaScript
               li
+                a(href="#browser-javascript") JavaScript (browser only)
+              li
                 a(href="#ruby") Ruby
               li
                 a(href="#python") Python
@@ -87,7 +89,10 @@ html(lang="en")
 
       article
         a(name="javascript")
-        include examples/javascript
+        include examples/javascript-node
+      article
+        a(name="browser-javascript")
+        include examples/javascript-browser
       article
         a(name="ruby")
         include examples/ruby
