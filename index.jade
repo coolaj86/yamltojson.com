@@ -62,75 +62,22 @@ html(lang="en")
             However, for the sake of human-readability, it's very convenient to use
             the whitespace syntax of YAML without any brackets.
 
-      .row
-        .span12
-          h3 JavaScript
-          pre.
-            (function () {
-              "use strict";
-
-              var json2yaml = require('json2yaml')
-                , json
-                , data
-                , yml
-                ;
-
-              json = '{ "foo": "bar" }';
-              data = JSON.parse(json);
-              yml = YAML.stringify(data);
-
-              console.log(yml);
-            }());
-
-          ul
-            li
-              code npm install json2yaml
-            li
-              a(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse") JSON.parse
-            li
-              a(href="https://github.com/coolaj86/json2yaml") YAML::dump
+      include examples/javascript
+      include examples/ruby
+      include examples/python
 
       .row
         .span12
-          h3 Ruby
-          pre.
-            require 'json'
-            require 'YAML'
-            
-            json = '{ "foo": "bar" }'
-            data = JSON.parse(json)
-            yml = YAML::dump(data)
-
-            puts yml
-
-          ul
-            li
-              code gem install json
-            li
-              a(href="http://www.ruby-doc.org/stdlib-2.0/libdoc/json/rdoc/JSON.html") JSON.parse
-            li
-              a(href="http://www.ruby-doc.org/stdlib-2.0/libdoc/yaml/rdoc/YAML.html") YAML::dump
-
-      .row
-        .span12
-          h3 Python
-          pre.
-            import json
-            import yaml
-
-            json = '{ "foo": "bar" }'
-            data = json.loads(json)
-            yml = yaml.dump(data)
-
-            print(yml)
-
-          ul
-            li
-              code pip install pyyaml || easy_install pyyaml
-            li
-              a(href="http://docs.python.org/2/library/json.html") json.loads
-            li
-              a(href="https://bitbucket.org/xi/pyyaml") yaml.dump
+          h3 Other languages...
+          p Want to see to to convert JSON to YAML in your favorite language?
+          p 
+            span Please 
+            a(href="https://github.com/coolaj86/json2yaml/issues/new?title=Add%20example%20for%20LANG_X%20to%20jsontoyaml.com&body=Can%20you%20please%20post%20an%20example%20of%20how%20to%20do%20this%20in%20LANG_X?") request an example
+            span  or  
+            a(href="https://github.com/coolaj86/json2yaml/new/gh-pages/examples?filename=LANG_X.jade") add it yourself
+            span  (you can use 
+            a(href="https://github.com/coolaj86/json2yaml/blob/master/examples/ruby.jade") examples/ruby.jade
+            span  as a template).
 
     footer.footer
       .container

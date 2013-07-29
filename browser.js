@@ -15,7 +15,11 @@ jQuery(function () {
     try {
       data = JSON.parse(json);
     } catch(e) {
-      $('.js-yml').val(e.toString());
+      $('.js-yml').val(
+        e.toString()
+      + '\n\n'
+      + "Go validate your JSON at http://jsonlint.com to figure out where the error is.\nThen come back here and try again."
+      );
       return;
     }
 
