@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head><title>JSON to YAML</title><link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"><link rel="stylesheet" type="text/css" href="./css/bootstrap-responsive.min.css"><link rel="stylesheet" type="text/css" href="./css/style.min.css"><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="./js/bootstrap.min.js"></script><script src="./js/pakmanaged.min.js"></script></head><body><div class="container"><div class="row"><div class="offset1 span5"><h2>JSON</h2><p>Paste your JSON here</p><textarea rows="20" class="span5 js-json">{
+  "foo": "bar",
+  "baz": [
+    "qux",
+    "quxx"
+  ],
+  "corge": null,
+  "grault": 1,
+  "garply": true,
+  "waldo": "false",
+  "fred": "undefined",
+  "emptyArray": [],
+  "emptyObject": {},
+  "emptyString": ""
+}</textarea></div><div class="span5"><h2>YML</h2><p>See the YML output here</p><textarea rows="20" class="span5 js-yml">---
+</textarea></div></div><div class="row"><div class="offset2 span4"><button type="button" class="center btn btn-primary btn-large js-convert">Convert JSON to YAML</button></div></div><div class="row"><br><div class="page-header"><h1>Converting from JSON to YAML</h1></div></div><div class="row"><div class="span12"><p>Converting JSON to YAML is a two part process.</p><p>First you have to convert a string of JSON into an object in whichever language you're using.
+This process is referred to as to <strong>parse</strong> or to <strong>deserialize</strong>.</p><p>Next you'll need to convert that object into a YAML string.
+This process is referred to as to to <strong>emit</strong>,
+to <strong>serialize</strong>, or to <strong>stringify</strong>.</p><p>Technically speaking, JSON already is YAML since YAML allows for the use
+of brackets and commas in the exact same way that JSON does.
+However, for the sake of human-readability, it's very convenient to use
+the whitespace syntax of YAML without any brackets.
+</p></div></div><div class="row"><div class="span12"><h3>JavaScript</h3><pre>(function () {
+  &quot;use strict&quot;;
+  
+  var json2yaml = require('json2yaml')
+    , json
+    , data
+    , yml
+    ;
+    
+  json = '{ &quot;foo&quot;: &quot;bar&quot; }';
+  data = JSON.parse(json);
+  yml = YAML.stringify(data);
+  
+  console.log(yml);
+}());
+</pre><ul><li><code>npm install json2yaml</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse">JSON.parse</a></li><li><a href="https://github.com/coolaj86/json2yaml">YAML::dump</a></li></ul></div></div><div class="row"><div class="span12"><h3>Ruby</h3><pre>require 'json'
+require 'YAML'
+
+json = '{ &quot;foo&quot;: &quot;bar&quot; }'
+data = JSON.parse(json)
+yml = YAML::dump(data)
+
+puts yml
+</pre><ul><li><code>gem install json</code></li><li><a href="http://www.ruby-doc.org/stdlib-2.0/libdoc/json/rdoc/JSON.html">JSON.parse</a></li><li><a href="http://www.ruby-doc.org/stdlib-2.0/libdoc/yaml/rdoc/YAML.html">YAML::dump</a></li></ul></div></div><div class="row"><div class="span12"><h3>Python</h3><pre>import json
+import yaml
+
+json = '{ &quot;foo&quot;: &quot;bar&quot; }'
+data = json.loads(json)
+yml = yaml.dump(data)
+
+print(yml)
+</pre><ul><li><code>pip install pyyaml || easy_install pyyaml</code></li><li><a href="http://docs.python.org/2/library/json.html">json.loads</a></li><li><a href="https://bitbucket.org/xi/pyyaml">yaml.dump</a></li></ul></div></div></div><footer class="footer"><div class="container"><p><span>Built by </span><a href="http://coolaj86.com">AJ ONeal</a><span></span></p><p><span>Code licensed under </span><a href="http://www.apache.org/licenses/LICENSE-2.0">Apache License v2.0</a><span>, documentation under </span><a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a><span></span></p><ul class="footer-links"><li><a href="https://github.com/coolaj86/json2yaml/tree/gh-pages">Source</a></li><li class="muted">•</li><li><a href="https://github.com/coolaj86/json2yaml/issues">Issues</a></li></ul></div></footer></body></html>
