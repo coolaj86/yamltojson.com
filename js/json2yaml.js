@@ -99,5 +99,10 @@
     return '---' + handlers[typeOf(data)](data) + '\n';
   }
 
-  exports.stringify = stringify;
+  if (!exports.YAML) {
+    exports.YAML = {};
+  }
+  if (!exports.YAML.stringify) {
+    exports.YAML.stringify = stringify;
+  }
 }('undefined' !== typeof exports && exports || 'undefined' !== typeof window && window));
