@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # jadetohtml
-jade index.html
+jade index.jade
 
 # lesstocss
 lessc -x style.less > css/style.min.css
