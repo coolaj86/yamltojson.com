@@ -6,6 +6,7 @@ html(lang="en")
     link(rel="stylesheet", type="text/css", href="./css/bootstrap.min.css")
     link(rel="stylesheet", type="text/css", href="./css/bootstrap-responsive.min.css")
     link(rel="stylesheet", type="text/css", href="./css/style.min.css")
+    link(rel="stylesheet", type="text/css", href="./css/google_prettify/sons-of-obsidian.css")
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
     script(src="./js/bootstrap.min.js")
     script(src="./js/pakmanaged.min.js")
@@ -97,3 +98,12 @@ html(lang="en")
           li.muted •
           li
             a(href="https://github.com/coolaj86/json2yaml/issues") Issues
+
+    script(src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js")
+    script.
+      var pres = document.getElementsByTagName("pre");
+      for (var i=0; i < pres.length; ++i) {
+        pres[i].className = "prettyprint linenums";
+      }
+      prettyPrint();
+
