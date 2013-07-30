@@ -1,7 +1,7 @@
 jQuery(function () {
   "use strict";
 
-  var YAML = require('yamljs')
+  var YAML = require('./yamljs')
     , $ = require('jQuery')
     , $events = $('body')
     ;
