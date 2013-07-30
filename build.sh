@@ -5,7 +5,7 @@ set -e
 rm -rf public/
 
 git add build.sh examples/ index.jade browser.js style.less README.md package.json
-git commit -m "build.sh: YOLO"
+git commit -m "build.sh: YOLO" || true
 git push
 
 mkdir -p public/{js,css}
