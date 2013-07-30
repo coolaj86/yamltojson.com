@@ -39,8 +39,7 @@ cat example.yml | yaml2json
     , yml
     ;
 
-  yml = '---\
-  foo: bar';
+  yml = '---&#92;n  foo: bar';
   data = YAML.parse(yml);
   json = JSON.stringify(data);
 
@@ -55,8 +54,7 @@ cat example.yml | yaml2json
     , yml
     ;
 
-  yml = '---\
-  foo: bar';
+  yml = '---&#92;n  foo: bar';
   data = YAML.parse(yml);
   json = JSON.stringify(data);
 
