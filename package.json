@@ -16,7 +16,5 @@
     "url": "https://github.com/coolaj86/yamltojson.com/issues"
   },
   "dependencies": {
-    "yamljs": "~0.1.4",
-    "path": "~0.4.9"
   }
 }
