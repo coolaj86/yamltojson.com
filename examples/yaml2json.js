@@ -7,7 +7,7 @@
     , yml
     ;
 
-  yml = '---\n  foo: bar';
+  yml = '---\\n  foo: bar';
   data = YAML.parse(yml);
   json = JSON.stringify(data);
 
