@@ -1,30 +1,30 @@
 jQuery(function () {
   "use strict";
 
-  var YAML = require('json2yaml')
+  var YAML = require('yamljs')
     , $ = require('jQuery')
     , $events = $('body')
     ;
 
   $events.on('click', '.js-convert', function () {
-    var json = $('.js-json').val()
+    var yml = $('.js-yml').val()
       , data
-      , yml
+      , json
       ;
 
     try {
-      data = JSON.parse(json);
+      data = YAML.parse(yml);
     } catch(e) {
-      $('.js-yml').val(
+      $('.js-json').val(
         e.toString()
       + '\n\n'
-      + "Go validate your JSON at http://jsonlint.com to figure out where the error is.\nThen come back here and try again."
+      + "Go validate your YAML at http://yamllint.com to figure out where the error is.\nThen come back here and try again."
       );
       return;
     }
 
-    yml = YAML.stringify(data);
-    $('.js-yml').val(yml);
+    json = JSON.stringify(data, null, '  ');
+    $('.js-json').val(json);
   });
 
 });

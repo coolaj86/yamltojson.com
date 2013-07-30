@@ -1,4 +1,4 @@
-jsontoyaml.com
+yamltojson.com
 ==============
 
-Source for jsontoyaml.com
+Source for <http://yamltojson.com>

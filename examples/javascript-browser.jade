@@ -2,30 +2,18 @@
   .span12
     h3 JavaScript (browser only)
     pre.
-      &lt;script src="http://jsontoyaml.com/js/json2yaml.js"&gt;&lt;/script&gt;
-    pre.
-      (function () {
-        "use strict";
-
-        var YAML = window.YAML
-          , json
-          , data
-          , yml
-          ;
-
-        json = '{ "foo": "bar" }';
-        data = JSON.parse(json);
-        yml = YAML.stringify(data);
-
-        console.log(yml);
-      }());
+      &lt;script src="http://jsontoyaml.com/js/yaml.js"&gt;&lt;/script&gt;
+    pre
+      include yamltojson-browser.js
 
     ul
       li
         span Download 
         code
-          a(href="http://jsontoyaml.com/js/json2yaml.js") json2yaml.js
+          a(href="http://jsontoyaml.com/js/yaml.js") yaml.js
       li
-        a(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse") JSON.parse
+        a(href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify") JSON.stringify
       li
-        a(href="https://github.com/coolaj86/json2yaml") YAML.stringify
+        a(href="https://github.com/jeremyfa/yaml.js") YAML.parse
+      li.
+        Note: where size is a concern another YAML library which is not as complete, but handles the most common use cases may be a more suitable option.

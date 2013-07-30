@@ -1,9 +1,9 @@
 !!!5
 html(lang="en")
   head
-    title JSON to YAML
+    title YAML to JSON
     meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
-    meta(name="description", content="For all the times you've wanted to convert from JSON to YAML... in your browser.")
+    meta(name="description", content="For all the times you've wanted to convert from YAML to JSON... in your browser.")
     link(rel="stylesheet", type="text/css", href="./css/bootstrap.min.css")
     link(rel="stylesheet", type="text/css", href="./css/bootstrap-responsive.min.css")
     link(rel="stylesheet", type="text/css", href="./css/style.min.css")
@@ -14,7 +14,7 @@ html(lang="en")
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-      ga('create', 'UA-42802552-1', 'jsontoyaml.com');
+      ga('create', 'UA-42802552-2', 'yamltojson.com');
       ga('send', 'pageview');
     script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
     script(src="./js/bootstrap.min.js")
@@ -23,59 +23,59 @@ html(lang="en")
     .container
       section.row
         .offset1.span5
-          h2 JSON
-          //- TODO will need JSONLint
-          p Paste your JSON here
-          textarea.span5.js-json(rows="20").
-            {
-              "foo": "bar",
-              "baz": [
-                "qux",
-                "quxx"
-              ],
-              "corge": null,
-              "grault": 1,
-              "garply": true,
-              "waldo": "false",
-              "fred": "undefined",
-              "emptyArray": [],
-              "emptyObject": {},
-              "emptyString": ""
-            }
-        .span5
           h2 YML
-          p See the YML output here
+          //- TODO will need YMLLint
+          p Paste your YAML here
           textarea.span5.js-yml(rows="20").
             ---
+              foo: "bar"
+              baz: 
+                - "qux"
+                - "quxx"
+              corge: null
+              grault: 1
+              garply: true
+              waldo: "false"
+              fred: "undefined"
+              emptyArray: []
+              emptyObject: {}
+              emptyString: ""
+        .span5
+          h2 JSON
+          p See the JSON output here
+          textarea.span5.js-json(rows="20").
+            null
 
       .row
         .offset2.span4
-          button.center.btn.btn-primary.btn-large.js-convert(type="button") Convert JSON to YAML
+          button.center.btn.btn-primary.btn-large.js-convert(type="button") Convert YAML to JSON
 
       section
         .row
           br
           .page-header
-            h1 Converting from JSON to YAML
+            h1 Converting from YAML to JSON
         .row
           .span12
-            p Converting JSON to YAML is a two part process.
+            p Converting YAML to JSON is a two part process.
             p.
-              First you have to convert a string of JSON into an object in whichever language you're using.
+              First you have to convert a string of YML into an object in whichever language you're using.
               This process is referred to as to <strong>parse</strong> or to <strong>deserialize</strong>.
             p.
-              Next you'll need to convert that object into a YAML string.
+              Next you'll need to convert that object into a JSON string.
               This process is referred to as to to <strong>emit</strong>,
               to <strong>serialize</strong>, or to <strong>stringify</strong>.
             p.
-              Technically speaking, JSON already is YAML since YAML allows for the use
-              of brackets and commas in the exact same way that JSON does.
-              However, for the sake of human-readability, it's very convenient to use
-              the whitespace syntax of YAML without any brackets.
+              Technically speaking, any YAML parser should have the option to stringify in JSON
+              (basically the "compressed" version of YAML -
+              no optional whitespace or comments, but all optional quotes).
+              However, since YAML is a superset of JSON, using a JSON stringifier will ensure
+              that none of the YAML-only features (lack of quotes or inclusion of comments)
+              makes it into the output.
       section
         .row
           .page-header
-            h1 How do I convert from JSON to YAML in...
+            h1 How do I convert from YAML to JSON in...
             ul
               li
                 a(href="#bash") Bash
@@ -110,14 +110,14 @@ html(lang="en")
         a(name="other")
         .span12
           h3 Other languages...
-          p Want to see to to convert JSON to YAML in your favorite language?
+          p Want to see to to convert YAML to JSON in your favorite language?
           p 
             span Please 
-            a(href="https://github.com/coolaj86/jsontoyaml.com/issues/new?title=Add%20example%20for%20LANG_X%20to%20jsontoyaml.com&body=Can%20you%20please%20post%20an%20example%20of%20how%20to%20do%20this%20in%20LANG_X?") request an example
+            a(href="https://github.com/coolaj86/yamltojson.com/issues/new?title=Add%20example%20for%20LANG_X&body=Can%20you%20please%20post%20an%20example%20of%20how%20to%20do%20this%20in%20LANG_X?") request an example
             span  or  
-            a(href="https://github.com/coolaj86/jsontoyaml.com/new/gh-pages/examples?filename=LANG_X.jade") add it yourself
+            a(href="https://github.com/coolaj86/yamltojson.com/new/gh-pages/examples?filename=LANG_X.jade") add it yourself
             span  (you can use 
-            a(href="https://github.com/coolaj86/jsontoyaml.com/blob/master/examples/ruby.jade") examples/ruby.jade
+            a(href="https://github.com/coolaj86/yamltojson.com/blob/master/examples/ruby.jade") examples/ruby.jade
             span  as a template).
 
     footer.footer
@@ -134,10 +134,25 @@ html(lang="en")
           span .
         ul.footer-links
           li
-            a(href="https://github.com/coolaj86/jsontoyaml.com") Source
+            a(href="https://github.com/coolaj86/yamltojson.com") Source
           li.muted •
           li
-            a(href="https://github.com/coolaj86/jsontoyaml.com/issues") Issues
+            a(href="https://github.com/coolaj86/yamltojson.com/issues") Issues
+        ul
+          li
+            a(href="http://yamllint.com/") YAML Lint
+          li.muted •
+          li
+            a(href="http://jsontoyaml.com/") JSON to YAML
+          li.muted •
+          li
+            a(href="http://jsonlint.com/") JSON Lint
+          li.muted •
+          li
+            a(href="http://marijnhaverbeke.nl//uglifyjs") UglifyJS
+          li.muted •
+          li
+            a(href="http://jshint.com/") JSHint
 
     script(src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js")
     script.

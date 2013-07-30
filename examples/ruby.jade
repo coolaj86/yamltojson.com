@@ -1,20 +1,13 @@
 .row
   .span12
     h3 Ruby
-    pre.
-      require 'json'
-      require 'yaml'
-      
-      json = '{ "foo": "bar" }'
-      data = JSON.parse(json)
-      yml = YAML::dump(data)
-
-      puts yml
+    pre
+      include yaml2json.rb
 
     ul
       li
         code gem install json
       li
-        a(href="http://www.ruby-doc.org/stdlib-2.0/libdoc/json/rdoc/JSON.html") JSON.parse
+        a(href="http://www.ruby-doc.org/stdlib-2.0/libdoc/json/rdoc/JSON.html") JSON.dump
       li
-        a(href="http://www.ruby-doc.org/stdlib-2.0/libdoc/yaml/rdoc/YAML.html") YAML::dump
+        a(href="http://www.ruby-doc.org/stdlib-2.0/libdoc/yaml/rdoc/YAML.html") YAML::load

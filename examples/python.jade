@@ -1,20 +1,13 @@
 .row
   .span12
     h3 Python
-    pre.
-      import json
-      import yaml
-
-      json = '{ "foo": "bar" }'
-      data = json.loads(json)
-      yml = yaml.dump(data)
-
-      print(yml)
+    pre
+      include yaml2json.py
 
     ul
       li
         code pip install pyyaml || easy_install pyyaml
       li
-        a(href="http://docs.python.org/2/library/json.html") json.loads
+        a(href="https://bitbucket.org/xi/pyyaml") yaml.load
       li
-        a(href="https://bitbucket.org/xi/pyyaml") yaml.dump
+        a(href="http://docs.python.org/2/library/json.html") json.dumps

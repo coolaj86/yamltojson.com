@@ -1,5 +1,5 @@
 {
-  "name": "jsontoyaml.com",
+  "name": "yamltojson.com",
   "version": "1.0.0",
   "description": "\"The JavaScript for the selfsame website\"",
   "main": "browser.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/coolaj86/json2yaml.git"
+    "url": "git://github.com/coolaj86/yamltojson.com.git"
   },
-  "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.info/)",
+  "author": "AJ ONeal <coolaj86@gmail.com> (http://coolaj86.com/)",
   "license": "Apache2",
   "bugs": {
-    "url": "https://github.com/coolaj86/json2yaml/issues"
+    "url": "https://github.com/coolaj86/yamltojson.com/issues"
   },
   "dependencies": {
-    "json2yaml": "~1.0.3"
+    "yamljs": "~0.1.4"
   }
 }
