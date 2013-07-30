@@ -30,37 +30,37 @@ yaml2json example.yml
 
 # From stdin
 cat example.yml | yaml2json
-</pre><ul><li><span>Install </span><a href="http://nodejs.org#download">NodeJS</a></li><li><a href="https://github.com/coolaj86/yaml2json">yaml2json</a></li></ul></div></div></article><article><a name="javascript"></a><div class="row"><div class="span12"><h3>JavaScript</h3><pre><script>(function () {
-  "use strict";
-
+</pre><ul><li><span>Install </span><a href="http://nodejs.org#download">NodeJS</a></li><li><a href="https://github.com/coolaj86/yaml2json">yaml2json</a></li></ul></div></div></article><article><a name="javascript"></a><div class="row"><div class="span12"><h3>JavaScript</h3><pre>(function () {
+  &quot;use strict&quot;;
+  
   var YAML = require('yamljs')
     , json
     , data
     , yml
     ;
-
-  yml = '---&#92;n  foo: bar';
+    
+  yml = '---\n  foo: bar';
   data = YAML.parse(yml);
   json = JSON.stringify(data);
-
+  
   console.log(json);
 }());
-</script></pre><ul><li><code>npm install yamljs</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a></li><li><a href="https://github.com/jeremyfa/yaml.js">YAML.parse</a></li></ul></div></div></article><article><a name="browser-javascript"></a><div class="row"><div class="span12"><h3>JavaScript (browser only)</h3><pre>&lt;script src=&quot;http://jsontoyaml.com/js/yaml.js&quot;&gt;&lt;/script&gt;</pre><pre><script>(function () {
-  "use strict";
-
+</pre><ul><li><code>npm install yamljs</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a></li><li><a href="https://github.com/jeremyfa/yaml.js">YAML.parse</a></li></ul></div></div></article><article><a name="browser-javascript"></a><div class="row"><div class="span12"><h3>JavaScript (browser only)</h3><pre>&lt;script src=&quot;http://jsontoyaml.com/js/yaml.js&quot;&gt;&lt;/script&gt;</pre><pre>(function () {
+  &quot;use strict&quot;;
+  
   var YAML = window.YAML
     , json
     , data
     , yml
     ;
-
-  yml = '---&#92;n  foo: bar';
+    
+  yml = '---&amp;#92;n  foo: bar';
   data = YAML.parse(yml);
   json = JSON.stringify(data);
-
+  
   console.log(json);
 }());
-</script></pre><ul><li><span>Download </span><code><a href="http://jsontoyaml.com/js/yaml.js">yaml.js</a></code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a></li><li><a href="https://github.com/jeremyfa/yaml.js">YAML.parse</a></li><li>Note: where size is a concern another YAML library which is not as complete, but handles the most common use cases may be a more suitable option.</li></ul></div></div></article><article><a name="ruby"></a><div class="row"><div class="span12"><h3>Ruby</h3><pre>require 'json'
+</pre><ul><li><span>Download </span><code><a href="http://jsontoyaml.com/js/yaml.js">yaml.js</a></code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a></li><li><a href="https://github.com/jeremyfa/yaml.js">YAML.parse</a></li><li>Note: where size is a concern another YAML library which is not as complete, but handles the most common use cases may be a more suitable option.</li></ul></div></div></article><article><a name="ruby"></a><div class="row"><div class="span12"><h3>Ruby</h3><pre>require 'json'
 require 'yaml'
 
 yml = <<-eos
