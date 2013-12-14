@@ -23,37 +23,44 @@ html(lang="en")
   body
     .container
       .row
-        h2 Convert YAML to JSON Online (and in every language)
+        h2 Convert YAML to JSON Online
+        h3 (and in every language)
       section.row
-        .offset1.span5
-          h2 YML
-          //- TODO will need YMLLint
-          p Paste your YAML here
-          textarea.span5.js-yml(rows="20").
-            ---
-            foo: "bar"
-            baz: 
-              - "qux"
-              - "quxx"
-            corge: null
-            grault: 1
-            garply: true
-            waldo: "false"
-            fred: "undefined"
-            emptyArray: []
-            emptyObject: {}
-            emptyString: ""
-        .span5
-          h2 JSON
-          p See the JSON output here
-          textarea.span5.js-json(rows="20").
-            null
+        .span2
+          | ad goes here
+        .span8
+          .offset1.span5
+            h2 YML
+            //- TODO will need YMLLint
+            p Paste your YAML here
+            textarea.span5.js-yml(rows="20").
+              ---
+              foo: "bar"
+              baz: 
+                - "qux"
+                - "quxx"
+              corge: null
+              grault: 1
+              garply: true
+              waldo: "false"
+              fred: "undefined"
+              emptyArray: []
+              emptyObject: {}
+              emptyString: ""
+          .span5
+            h2 JSON
+            p See the JSON output here
+            textarea.span5.js-json(rows="20").
+              null
+        .span2
+          include google-ad-1.html
 
-      .row
-        .offset2.span4
-          button.center.btn.btn-primary.btn-large.js-convert(type="button") Convert YAML to JSON
-        .offset1.span4
-          a(href="http://jsontoyaml.com/") Convert JSON to YAML Online
+
+        .row
+          .offset2.span4
+            button.center.btn.btn-primary.btn-large.js-convert(type="button") Convert YAML to JSON
+          .offset1.span4
+            a(href="http://jsontoyaml.com/") Convert JSON to YAML Online
 
       section
         .row
