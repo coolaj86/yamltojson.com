@@ -27,31 +27,33 @@ html(lang="en")
         h3 (and in every language)
       section.row
         .span2
-          | ad goes here
+          include google-ad-2.html
         .span8
-          .offset1.span5
-            h2 YML
-            //- TODO will need YMLLint
-            p Paste your YAML here
-            textarea.span5.js-yml(rows="20").
-              ---
-              foo: "bar"
-              baz: 
-                - "qux"
-                - "quxx"
-              corge: null
-              grault: 1
-              garply: true
-              waldo: "false"
-              fred: "undefined"
-              emptyArray: []
-              emptyObject: {}
-              emptyString: ""
-          .span5
-            h2 JSON
-            p See the JSON output here
-            textarea.span5.js-json(rows="20").
-              null
+          .container
+            .row
+              .span4
+                h2 YML
+                //- TODO will need YMLLint
+                p Paste your YAML here
+                textarea.span4.js-yml(rows="20").
+                  ---
+                  foo: "bar"
+                  baz: 
+                    - "qux"
+                    - "quxx"
+                  corge: null
+                  grault: 1
+                  garply: true
+                  waldo: "false"
+                  fred: "undefined"
+                  emptyArray: []
+                  emptyObject: {}
+                  emptyString: ""
+              .span4
+                h2 JSON
+                p See the JSON output here
+                textarea.span4.js-json(rows="20").
+                  null
         .span2
           include google-ad-1.html
 
