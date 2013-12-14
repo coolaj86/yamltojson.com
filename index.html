@@ -4,7 +4,7 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 ga('create', 'UA-42802552-2', 'yamltojson.com');
-ga('send', 'pageview');</script><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="./js/bootstrap.min.js"></script><script src="./js/yaml.js"></script><script src="./js/pakmanaged.min.js"></script></head><body><div class="container"><div class="row"><h2>Convert YAML to JSON Online (and in every language)</h2></div><section class="row"><div class="offset1 span5"><h2>YML</h2><p>Paste your YAML here</p><textarea rows="20" class="span5 js-yml">---
+ga('send', 'pageview');</script><script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><script src="./js/bootstrap.min.js"></script><script src="./js/yaml.js"></script><script src="./js/pakmanaged.min.js"></script></head><body><div class="container"><div class="row"><h2>Convert YAML to JSON Online</h2><h3>(and in every language)</h3></div><section class="row"><div class="span2">ad goes here</div><div class="span8"><div class="offset1 span5"><h2>YML</h2><p>Paste your YAML here</p><textarea rows="20" class="span5 js-yml">---
 foo: "bar"
 baz: 
   - "qux"
@@ -16,8 +16,16 @@ waldo: "false"
 fred: "undefined"
 emptyArray: []
 emptyObject: {}
-emptyString: ""</textarea></div><div class="span5"><h2>JSON</h2><p>See the JSON output here</p><textarea rows="20" class="span5 js-json">null
-</textarea></div></section><div class="row"><div class="offset2 span4"><button type="button" class="center btn btn-primary btn-large js-convert">Convert YAML to JSON</button></div><div class="offset1 span4"><a href="http://jsontoyaml.com/">Convert JSON to YAML Online</a></div></div><section><div class="row"><br><div class="page-header"><h1>Converting from YAML to JSON</h1></div></div><div class="row"><div class="span12"><p>Converting YAML to JSON is a two part process.</p><p>First you have to convert a string of YML into an object in whichever language you're using.
+emptyString: ""</textarea></div><div class="span5"><h2>JSON</h2><p>See the JSON output here</p><textarea rows="20" class="span5 js-json">null</textarea></div></div><div class="span2"><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- YAMLtoJSON Wide Sky -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-8389988710887724"
+     data-ad-slot="1503061440"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div><div class="row"><div class="offset2 span4"><button type="button" class="center btn btn-primary btn-large js-convert">Convert YAML to JSON</button></div><div class="offset1 span4"><a href="http://jsontoyaml.com/">Convert JSON to YAML Online</a></div></div></section><section><div class="row"><br><div class="page-header"><h1>Converting from YAML to JSON</h1></div></div><div class="row"><div class="span12"><p>Converting YAML to JSON is a two part process.</p><p>First you have to convert a string of YML into an object in whichever language you're using.
 This process is referred to as to <strong>parse</strong> or to <strong>deserialize</strong>.</p><p>Next you'll need to convert that object into a JSON string.
 This process is referred to as to <strong>emit</strong>,
 to <strong>serialize</strong>, or to <strong>stringify</strong>.</p><p>Technically speaking, any YAML parser should have the option to stringify in JSON
@@ -31,7 +39,7 @@ yaml2json example.yml
 # From stdin
 cat example.yml | yaml2json
 </pre><ul><li><span>Install </span><a href="http://nodejs.org#download">NodeJS</a></li><li><a href="https://github.com/coolaj86/yaml2json">yaml2json</a></li></ul></div></div></article><article><a name="javascript"></a><div class="row"><div class="span12"><h3>JavaScript</h3><pre>(function () {
-  &quot;use strict&quot;;
+  "use strict";
   
   var YAML = require('yamljs')
     , json
@@ -45,8 +53,8 @@ cat example.yml | yaml2json
   
   console.log(json);
 }());
-</pre><ul><li><code>npm install yamljs</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a></li><li><a href="https://github.com/jeremyfa/yaml.js">YAML.parse</a></li></ul></div></div></article><article><a name="browser-javascript"></a><div class="row"><div class="span12"><h3>JavaScript (browser only)</h3><pre>&lt;script src=&quot;http://jsontoyaml.com/js/yaml.js&quot;&gt;&lt;/script&gt;</pre><pre>(function () {
-  &quot;use strict&quot;;
+</pre><ul><li><code>npm install yamljs</code></li><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify">JSON.stringify</a></li><li><a href="https://github.com/jeremyfa/yaml.js">YAML.parse</a></li></ul></div></div></article><article><a name="browser-javascript"></a><div class="row"><div class="span12"><h3>JavaScript (browser only)</h3><pre>&lt;script src="http://jsontoyaml.com/js/yaml.js"&gt;&lt;/script&gt;</pre><pre>(function () {
+  "use strict";
   
   var YAML = window.YAML
     , json
@@ -54,7 +62,7 @@ cat example.yml | yaml2json
     , yml
     ;
     
-  yml = '---&amp;#92;n  foo: bar';
+  yml = '---&#92;n  foo: bar';
   data = YAML.parse(yml);
   json = JSON.stringify(data);
   
