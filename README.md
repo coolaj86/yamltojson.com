@@ -1,9 +1,2 @@
-yamltojson.com
-==============
-
-Source for <http://yamltojson.com>
-
-See also
-
-  * <http://jsontoyaml.com>
-  * <https://github.com/coolaj86/jsontoyaml.com>
+# Moved
+### [yamltojson.com](https://git.daplie.com/coolaj86/yamltojson.com) is now at [git.daplie.com/coolaj86/yamltojson.com](https://git.daplie.com/coolaj86/yamltojson.com)
